@@ -17,13 +17,15 @@ public class Lanche {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String nome;
 
     private String descrição;
 
     private String igrediente;
 
-    private BigDecimal preço;
+    private BigDecimal preco;
 
     @ManyToOne
     @JoinColumn(name = "restaurante_id")
