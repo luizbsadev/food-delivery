@@ -1,5 +1,6 @@
 package com.bsa.fooddelivery.model;
 
+import com.bsa.fooddelivery.model.dto.CriarRestauranteDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,9 +21,19 @@ public class Restaurante {
 
     private String nome;
 
+    private String descricao;
+
     @Embedded
     private Endereco endereco;
 
     @OneToMany
     private List<Lanche> cardapio;
+
+    public Restaurante(CriarRestauranteDTO dados){
+        this.nome = dados.nome();
+        this.descricao = dados.descricao();
+        this.endereco = new Endereco(dados.endereco());
+
+
+    }
 }
