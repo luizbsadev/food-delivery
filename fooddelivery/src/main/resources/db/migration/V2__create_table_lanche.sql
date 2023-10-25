@@ -1,5 +1,5 @@
 create table lanche(
-    id int primary key,
+    id int primary key auto_increment,
     nome varchar(255),
     descricao varchar (255),
     igredientes varchar(255),
